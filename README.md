@@ -2,6 +2,8 @@
 
 Small sample website, shows how Django serves files to a visitor.
 
+To run open cmd in folder with `manage.py` and type `python manage.py runserver` and go to `localhost:8000` on your browser
+
 
 ## TODO:
 

@@ -60,22 +60,23 @@
     <div class = "contactus">
       <h3>CONTACT US</h3>
       <h4>EMAIL OR GIVE US A CALL</h4>
-      <p>Email: teamtasyo@outlook.com<br>
-      Globe: [pending]</p>
+      {% for contact in audio.contact_set.all %}
+      <p>{{ contact.service_name }}: {{ contact.account }}</p>
+      {% endfor %}      
     </div>
 
     <div class = "donation">
       <h3>SUPPORT US WITH YOUR DONATION</h3>
-      <p>Paypal: [account pending]<br>
-      GCash: [account pending]<br>
-      PayMaya: [account pending]</p>
+      {% for option in audio.donate_option_set.all %}
+      <p>{{ donate_option.option_name }}: {{ donate_option.account_details }}</p>
+      {% endfor %}
     </div>
 
     <div class="partners">
       <h3>THANKS TO OUR PARTNERS</h3>
-      <p>Ateneo De Manila University Press: http://www.ateneo.edu/ateneopress/<br>
-      Radyo Katipunan: https://jescom.ph/radyo-katipunan/<br> 
-      Computer Society of the Ateneo: http://www.compsat.org/index.php </p>
+      {% for partner in audio.partner_set.all %}
+      <p>{{ partner.partner_logo }}: {{ partner.partner_link }}</p>
+      {% endfor %}
 
     <div class ="disclaimer">
       <h3>DISCLAIMER</h3>
